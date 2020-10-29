@@ -38,16 +38,16 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
 
-        Shoot();
+        ShootPlayer();
 
-        foreach (Collider2D colision in Physics2D.OverlapCircleAll(transform.position, 0.02f, mask))
+        foreach (Collider2D collision in Physics2D.OverlapCircleAll(transform.position, 0.02f, mask))
         {
 
-            if (colision.CompareTag("Bullet"))
+            if (collision.CompareTag("Bullet"))
             {
-                colision.tag = "Untagged";
-                //MakeDamage();
-                Destroy(colision.gameObject);
+                collision.tag = "Untagged";
+
+                //Destroy(collision.gameObject);
             }
 
 
@@ -57,17 +57,13 @@ public class PlayerShoot : MonoBehaviour
 
 
 
-    //void MakeDamage()
-    //{
-    //    GetComponent<HealthComponent>().TakeDamage(20);
-    //}
+    
 
 
 
 
 
-
-    void Shoot()
+    void ShootPlayer()
     {
 
 
