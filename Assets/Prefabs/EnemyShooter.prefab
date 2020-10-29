@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -1638350815468035775}
   - component: {fileID: 8847575363272376286}
   - component: {fileID: 107216413113420190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c3538b1d97f3b4c859b8d35ef90473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  fireRate: 0
+  speed: 1
+  fireRate: 1
   power: 0
 --- !u!212 &8847575363272376286
 SpriteRenderer:
@@ -113,3 +113,4 @@ MonoBehaviour:
   enemyManager: {fileID: -1638350815468035775}
   prefabBullet: {fileID: 6635388721900721313, guid: 423026bbe2ef1d34f9006b841f1a767a,
     type: 3}
+  nextfire: 0
