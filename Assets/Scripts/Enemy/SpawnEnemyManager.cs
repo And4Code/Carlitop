@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpawnEnemyManager : MonoBehaviour
 {
-    public GameObject prefabEnemy1;
-    public GameObject prefabEnemy2;
-    public GameObject prefabEnemy3;
+    public GameObject enemyShooter;
+    public GameObject enemyRusher;
+    public GameObject asteroid;
 
     public float spawnRate;
 
@@ -26,16 +26,16 @@ public class SpawnEnemyManager : MonoBehaviour
         switch (whoSpawn)
         {
             case 1:
-                GameObject newEnemy1 = (GameObject)Instantiate(prefabEnemy1);
-                newEnemy1.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
+                GameObject newEnemyShooter = (GameObject)Instantiate(enemyShooter);
+                newEnemyShooter.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
                 break;
             case 2:
-                GameObject newEnemy2 = (GameObject)Instantiate(prefabEnemy2);
-                newEnemy2.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
+                GameObject newEnemyRusher = (GameObject)Instantiate(enemyRusher);
+                newEnemyRusher.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
                 break;
             case 3:
-                GameObject newEnemy3 = (GameObject)Instantiate(prefabEnemy3);
-                newEnemy3.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
+                GameObject newAsteroid = (GameObject)Instantiate(asteroid);
+                newAsteroid.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
                 break;
 
             default:
