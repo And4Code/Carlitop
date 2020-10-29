@@ -1080,6 +1080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1983445409}
+  - component: {fileID: 1983445410}
   m_Layer: 0
   m_Name: SpawnerEnemy
   m_TagString: Untagged
@@ -1101,6 +1102,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1983445410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983445408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dffbe22a1a839f4e977d883fed30f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyShooter: {fileID: 5471332016451299226, guid: 94ee0f9f252617d4fa0a70cda913bdbe,
+    type: 3}
+  enemyRusher: {fileID: 5411300556872888186, guid: b50d9d6d5ecf95e4893553e6220a16e7,
+    type: 3}
+  asteroid: {fileID: 6422385878268954063, guid: 5c2bf70c749189a4f9da3357d535b622,
+    type: 3}
+  spawnRate: 0
 --- !u!1001 &6497707226935075217
 PrefabInstance:
   m_ObjectHideFlags: 0
