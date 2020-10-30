@@ -12,7 +12,7 @@ public class PlayerShoot : MonoBehaviour
  
 
 
-    public LayerMask mask;
+   
 
     //angles possibles pour shoots.
 
@@ -38,36 +38,21 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
 
-        Shoot();
+        ShootPlayer();
 
-        foreach (Collider2D colision in Physics2D.OverlapCircleAll(transform.position, 0.02f, mask))
-        {
-
-            if (colision.CompareTag("Bullet"))
-            {
-                colision.tag = "Untagged";
-                //MakeDamage();
-                Destroy(colision.gameObject);
-            }
-
-
-        }
+        
 
     }
 
 
 
-    //void MakeDamage()
-    //{
-    //    GetComponent<HealthComponent>().TakeDamage(20);
-    //}
+    
 
 
 
 
 
-
-    void Shoot()
+    void ShootPlayer()
     {
 
 
@@ -103,5 +88,10 @@ public class PlayerShoot : MonoBehaviour
 
         }
 
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, 0.02f);
     }
 }

@@ -2,24 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShooterEnemy : MonoBehaviour
+public class Asteroid : MonoBehaviour
 {
     public EnemyManager enemyManager;
-    public GameObject prefabBullet;
-    public float nextfire = 0f;
-
     public void Update()
     {
-        if(Time.time > nextfire)
-        {
-            Shoot();
-            nextfire = Time.time + enemyManager.fireRate;
-            
-        }
         Move();
 
     }
-    
     public void Move()
     {
         Vector2 position = transform.position;
@@ -34,12 +24,5 @@ public class ShooterEnemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    public void Shoot()
-    {
-        GameObject newBullet = Instantiate(prefabBullet, transform.position, Quaternion.identity);
-        newBullet.layer = gameObject.layer;
-        newBullet.GetComponent<ShootMovement>().SetDir(Vector2.down);
     }
 }
