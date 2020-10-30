@@ -5,54 +5,61 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
 
-    public GameObject PauseMenuUI;
-    private bool isPaused;
-
-    private void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Cursor.visible = !Cursor.visible;
-            Cursor.lockState = (Cursor.lockState == CursorLockMode.Locked) ? CursorLockMode.None : CursorLockMode.Locked;
-        }
+	[SerializeField]
+	private Texture2D m_Resume;
+	[SerializeField]
+	private Texture2D m_Quit;
+	[SerializeField]
+	private Texture2D m_Pause;
 
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            isPaused = !isPaused;
-        }
 
-        if (isPaused)
-        {
-            ActivateMenu();
-        }
-        else
-        {
-            DesactivateMenu();
+	private bool isPaused = false;
 
-        }
-    }
 
-    public void ActivateMenu()
-    {
-        Time.timeScale = 0;
-        PauseMenuUI.SetActive(true);
+	void Start()
+	{
 
-    }
+	}
 
-    public void DesactivateMenu()
-    {
-        Time.timeScale = 1;
-        PauseMenuUI.SetActive(false);
-        isPaused = false;
 
-    }
-    public void QuitGame()
+	void Update()
+	{
+		
+		if (Input.GetKeyDown(KeyCode.Escape))
+			isPaused = !isPaused;
 
-    {
-        Debug.Log("QUIT");
-        Application.Quit();
-    }
 
+		if (isPaused)
+			Time.timeScale = 0f;
+
+		else
+			Time.timeScale = 1.0f; 
+
+
+	}
+
+	void OnGUI()
+	{
+		if (isPaused)
+		{
+
+			GUI.DrawTexture(new Rect(Screen.width / 2 - 110, Screen.height / 2 - 120, 240, 300), m_Pause);
+
+			if (GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 , 80, 40), m_Resume))
+			{
+				isPaused = false;
+			}
+
+			if (GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 + 60, 80, 40), m_Quit))
+			{
+				// Application.Quit(); 
+				Application.LoadLevel("MainMenu"); 
+
+			}
+
+		    
+
+		}
+	}
 }
