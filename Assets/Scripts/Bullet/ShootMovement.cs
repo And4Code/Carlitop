@@ -7,14 +7,14 @@ public class ShootMovement : MonoBehaviour
     float speed = 5f;
     Transform bulletTransform;
     bool isMoving;
-    public LayerMask targetMask;
+    
 
 
     Vector3 wantedDir;
     void Start()
     {
         bulletTransform = GetComponent<Transform>();
-        targetMask = gameObject.layer;
+       
     }
 
     // Update is called once per frame
@@ -31,18 +31,7 @@ public class ShootMovement : MonoBehaviour
             Destroy(gameObject);
         }
 
-        foreach (Collider2D collision in Physics2D.OverlapCircleAll(transform.position, 0.02f, targetMask))
-        {
-
-            if (collision.gameObject.layer != gameObject.layer)
-            {
-                collision.tag = "Untagged";
-
-                Destroy(gameObject);
-            }
-
-
-        }
+        
 
     }
     public void Shoot(Vector3 shootDirection)
