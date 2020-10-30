@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 107216413113420190}
   m_Layer: 8
   m_Name: EnemyShooter
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,3 +114,6 @@ MonoBehaviour:
   prefabBullet: {fileID: 6635388721900721313, guid: 423026bbe2ef1d34f9006b841f1a767a,
     type: 3}
   nextfire: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 512

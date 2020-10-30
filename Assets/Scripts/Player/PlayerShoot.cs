@@ -7,6 +7,7 @@ public class PlayerShoot : MonoBehaviour
     private ShootMovement shootMov;
     [SerializeField]
     private Transform shooter;
+    public LayerMask mask;
 
 
  
@@ -40,7 +41,18 @@ public class PlayerShoot : MonoBehaviour
 
         ShootPlayer();
 
-        
+        foreach (Collider2D collision in Physics2D.OverlapCircleAll(transform.position, 0.02f, mask))
+        {
+
+            if (collision.CompareTag("Bullet"))
+            {
+                collision.tag = "Untagged";
+
+                Destroy(collision.gameObject);
+            }
+
+
+        }
 
     }
 

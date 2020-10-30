@@ -7,6 +7,7 @@ public class ShooterEnemy : MonoBehaviour
     public EnemyManager enemyManager;
     public GameObject prefabBullet;
     public float nextfire = 0f;
+    public LayerMask mask;
 
     public void Update()
     {
@@ -17,7 +18,18 @@ public class ShooterEnemy : MonoBehaviour
             
         }
         Move();
+        foreach (Collider2D collision in Physics2D.OverlapCircleAll(transform.position, 0.02f, mask))
+        {
 
+            if (collision.CompareTag("Bullet"))
+            {
+                collision.tag = "Untagged";
+
+                Destroy(gameObject);
+            }
+
+
+        }
     }
     
     public void Move()
