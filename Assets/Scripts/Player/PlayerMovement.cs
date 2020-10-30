@@ -15,11 +15,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        Movements();
+    }
+
+   public void Movements()
+    {
         Vector3 movementX = Vector3.right * Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
         Vector3 movementY = Vector3.up * Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
 
         transform.Translate(movementX);
         transform.Translate(movementY);
     }
-
 }
