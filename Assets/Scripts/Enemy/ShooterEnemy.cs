@@ -9,6 +9,14 @@ public class ShooterEnemy : MonoBehaviour
     public float nextfire = 0f;
     public LayerMask mask;
 
+    public Score killScore;
+
+
+
+    private void Awake()
+    {
+        killScore = FindObjectOfType<Score>();
+    }
     public void Update()
     {
         if(Time.time > nextfire)
@@ -26,6 +34,8 @@ public class ShooterEnemy : MonoBehaviour
                 collision.tag = "Untagged";
 
                 Destroy(gameObject);
+                Destroy(collision.gameObject);
+                killScore.scoreVal += 100;
             }
 
 
