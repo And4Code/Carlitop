@@ -7,4 +7,7 @@ public class EnemyManager : MonoBehaviour
     public float speed;
     public float fireRate;
     public float power;
+
+    public GameObject staminaBonus;
+    public GameObject healthBonus;
 }
