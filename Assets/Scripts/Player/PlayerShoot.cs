@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class PlayerShoot : MonoBehaviour
 {
     public GameObject prefabBullet;
 
+    private PHealthComponent health;
     private ShootMovement shootMov;
     [SerializeField]
     private Transform shooter;
@@ -33,7 +34,7 @@ public class PlayerShoot : MonoBehaviour
     private void Awake()
     {
         shootMov = FindObjectOfType<ShootMovement>();
-
+        health = GetComponent<PHealthComponent>();
 
 
     }
@@ -49,11 +50,11 @@ public class PlayerShoot : MonoBehaviour
             {
                 collision.tag = "Untagged";
 
-                
-                Destroy(gameObject);
+
+                health.TakeDamage(20);
                 Destroy(collision.gameObject);
 
-                //SceneManager.LoadScene("EndScene");
+                
             }
 
 
