@@ -7,7 +7,16 @@ public class ShooterEnemy : MonoBehaviour
     public EnemyManager enemyManager;
     public GameObject prefabBullet;
     public float nextfire = 0f;
+    public LayerMask mask;
 
+    public Score killScore;
+
+
+
+    private void Awake()
+    {
+        killScore = FindObjectOfType<Score>();
+    }
     public void Update()
     {
         if(Time.time > nextfire)
@@ -17,7 +26,20 @@ public class ShooterEnemy : MonoBehaviour
             
         }
         Move();
+        foreach (Collider2D collision in Physics2D.OverlapCircleAll(transform.position, 0.02f, mask))
+        {
 
+            if (collision.CompareTag("Bullet"))
+            {
+                collision.tag = "Untagged";
+
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
+                killScore.scoreVal += 100;
+            }
+
+
+        }
     }
     
     public void Move()

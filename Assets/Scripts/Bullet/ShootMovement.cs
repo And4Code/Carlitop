@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,12 +8,14 @@ public class ShootMovement : MonoBehaviour
     float speed = 5f;
     Transform bulletTransform;
     bool isMoving;
+    
 
 
     Vector3 wantedDir;
     void Start()
     {
         bulletTransform = GetComponent<Transform>();
+       
     }
 
     // Update is called once per frame
@@ -28,6 +31,8 @@ public class ShootMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
 
     }
     public void Shoot(Vector3 shootDirection)

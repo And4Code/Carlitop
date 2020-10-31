@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -7,12 +8,13 @@ public class PlayerShoot : MonoBehaviour
     private ShootMovement shootMov;
     [SerializeField]
     private Transform shooter;
+    public LayerMask mask;
 
 
  
 
 
-    public LayerMask mask;
+   
 
     //angles possibles pour shoots.
 
@@ -47,7 +49,11 @@ public class PlayerShoot : MonoBehaviour
             {
                 collision.tag = "Untagged";
 
-                //Destroy(collision.gameObject);
+                
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
+
+                //SceneManager.LoadScene("EndScene");
             }
 
 
@@ -99,5 +105,10 @@ public class PlayerShoot : MonoBehaviour
 
         }
 
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, 0.02f);
     }
 }

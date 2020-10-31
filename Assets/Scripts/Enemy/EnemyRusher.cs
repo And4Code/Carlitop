@@ -5,10 +5,18 @@ using UnityEngine;
 public class EnemyRusher : MonoBehaviour
 {
     public EnemyManager enemyManager;
+
+    [SerializeField]
+    private Animator m_purpleAnim;
+
+    private void Start()
+    {
+        //m_purpleAnim.GetComponent<Animator>().Play("PurpleEnemy");
+    }
     public void Update()
     {
         Move();
-
+        
     }
     public void Move()
     {
