@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public static float scoreVal;
+    public float scoreVal;
 
     [SerializeField]
     private float m_ScorePerSec;

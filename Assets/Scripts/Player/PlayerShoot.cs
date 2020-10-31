@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -48,7 +49,11 @@ public class PlayerShoot : MonoBehaviour
             {
                 collision.tag = "Untagged";
 
+                
+                Destroy(gameObject);
                 Destroy(collision.gameObject);
+
+                //SceneManager.LoadScene("EndScene");
             }
 
 
