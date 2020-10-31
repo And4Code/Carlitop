@@ -5,6 +5,8 @@ using UnityEngine;
 public class ShooterEnemy : MonoBehaviour
 {
     public EnemyManager enemyManager;
+    public HealthComponentEnemy healthComponent;
+
     public GameObject prefabBullet;
     public float nextfire = 0f;
     public LayerMask mask;
@@ -32,8 +34,26 @@ public class ShooterEnemy : MonoBehaviour
             if (collision.CompareTag("Bullet"))
             {
                 collision.tag = "Untagged";
+                gameObject.GetComponent<HealthComponentEnemy>().TakeDamage(35);
+                if(healthComponent.currentHealth <= 0)
+                {
+                    int bonusPop = Random.Range(1, 3);
+                    switch (bonusPop)
+                    {
+                        case 1:
+                            GameObject newStaminaBonus = (GameObject)Instantiate(enemyManager.staminaBonus);
+                            newStaminaBonus.transform.position = transform.position;
+                            break;
 
-                Destroy(gameObject);
+                        case 2:
+                            GameObject newHealthBonus = (GameObject)Instantiate(enemyManager.healthBonus);
+                            newHealthBonus.transform.position = transform.position;
+                            break;
+                    }
+                       
+                    Destroy(gameObject);
+
+                }
                 Destroy(collision.gameObject);
                 killScore.scoreVal += 100;
             }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyRusher : MonoBehaviour
 {
     public EnemyManager enemyManager;
+   
 
     [SerializeField]
     private Animator m_purpleAnim;

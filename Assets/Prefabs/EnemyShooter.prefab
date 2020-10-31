@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -1638350815468035775}
   - component: {fileID: 8847575363272376286}
   - component: {fileID: 107216413113420190}
+  - component: {fileID: -4481448765705824955}
   m_Layer: 8
   m_Name: EnemyShooter
   m_TagString: Enemy
@@ -48,6 +49,10 @@ MonoBehaviour:
   speed: 1
   fireRate: 1
   power: 0
+  staminaBonus: {fileID: 5180168272807738996, guid: acc22be1d25f98b4694bc625fa2fa8d7,
+    type: 3}
+  healthBonus: {fileID: 1640773237509291624, guid: d89b157fe856edf4282938249b585578,
+    type: 3}
 --- !u!212 &8847575363272376286
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -111,9 +116,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: -1638350815468035775}
+  healthComponent: {fileID: -4481448765705824955}
   prefabBullet: {fileID: 6635388721900721313, guid: 423026bbe2ef1d34f9006b841f1a767a,
     type: 3}
   nextfire: 0
   mask:
     serializedVersion: 2
     m_Bits: 512
+  killScore: {fileID: 0}
+--- !u!114 &-4481448765705824955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5471332016451299226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ad684a4484879498c8c201750bda9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
