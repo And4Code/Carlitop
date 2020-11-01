@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+  - StaminaBonus
+  - HealthBonus
   layers:
   - Default
   - TransparentFX
