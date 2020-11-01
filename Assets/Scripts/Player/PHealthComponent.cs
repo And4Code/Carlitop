@@ -43,9 +43,9 @@ public class PHealthComponent : MonoBehaviour
 
     }
 
-    void Heal(int heal)
+     public void Heal(int heal)
     {
-        currentHealth = +heal;
+        currentHealth += heal;
     }
 
     void Die()

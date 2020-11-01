@@ -57,6 +57,20 @@ public class PlayerShoot : MonoBehaviour
                 
             }
 
+            if (collision.CompareTag("StaminaBonus"))
+            {
+                collision.tag = "Untagged";
+                GetComponent<StaminaComponent>().IncreaseStamina(5);
+                Destroy(collision.gameObject);
+            }
+
+            if (collision.CompareTag("HealthBonus"))
+            {
+                collision.tag = "Untagged";
+                health.Heal(5);
+                Destroy(collision.gameObject);
+            }
+
 
         }
 
