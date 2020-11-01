@@ -106,18 +106,17 @@ public class PlayerShoot : MonoBehaviour
             //    go.GetComponent<ShootMovement>().SetDir(new Vector3());
             //}
             GameObject bullet1 = Instantiate(prefabBullet, shooter.position, prefabBullet.transform.rotation);
-            GameObject bullet2 = Instantiate(prefabBullet, shooter.position, prefabBullet.transform.rotation);
-            bullet1.transform.Rotate(0, 0, -90f);
-            bullet2.transform.Rotate(0, 0, 90f);
+            
+            bullet1.transform.Rotate(0, 0, 180f);
+          
 
 
             bullet1.layer = gameObject.layer;
-            bullet2.layer = gameObject.layer;
+          
 
 
             bullet1.GetComponent<ShootMovement>().SetDir(Vector3.down);
-            bullet2.GetComponent<ShootMovement>().SetDir(Vector3.down);
-
+            
         }
 
     }

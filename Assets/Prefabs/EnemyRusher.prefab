@@ -97,6 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 7189359018866015611}
+  m_Player: {fileID: 6497707225539207813, guid: ea596c1a68c64fa49bc88841f06dc367,
+    type: 3}
+  m_purpleAnim: {fileID: 7025004476887394699}
 --- !u!114 &7189359018866015611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +115,8 @@ MonoBehaviour:
   speed: 3
   fireRate: 0
   power: 0
+  staminaBonus: {fileID: 0}
+  healthBonus: {fileID: 0}
 --- !u!95 &7025004476887394699
 Animator:
   serializedVersion: 3
@@ -122,7 +127,7 @@ Animator:
   m_GameObject: {fileID: 5411300556872888186}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3dc72fb3dca5e8a47998b32030915b19, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
