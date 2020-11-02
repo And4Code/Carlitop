@@ -44,14 +44,14 @@ public class PauseMenu : MonoBehaviour
 		if (isPaused)
 		{
 
-			GUI.DrawTexture(new Rect(Screen.width / 2 - 110, Screen.height / 2 - 120, 240, 300), m_Pause);
+			GUI.DrawTexture(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 400, Screen.width / 2 , Screen.height/ 1.2f), m_Pause);
 
-			if (GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 , 80, 40), m_Resume))
+			if (GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 - 40, 160 , 80), m_Resume))
 			{
 				isPaused = false;
 			}
 
-			if (GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 + 60, 80, 40), m_Quit))
+			if (GUI.Button(new Rect(Screen.width / 2 - 40, Screen.height / 2 + 60, 160, 80), m_Quit))
 			{
 				// Application.Quit(); 
 				Application.LoadLevel("MainMenu"); 

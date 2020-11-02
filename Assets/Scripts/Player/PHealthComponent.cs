@@ -34,18 +34,15 @@ public class PHealthComponent : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
-        if (gameObject.GetComponent<HealthBar>() != null)
-        {
-            m_healthBar.SetHealth(currentHealth);
-        }
-
+        m_healthBar.SetHealth(currentHealth);
+        
 
     }
 
      public void Heal(int heal)
     {
         currentHealth += heal;
+        m_healthBar.SetHealth(currentHealth);
     }
 
     void Die()

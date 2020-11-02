@@ -13,7 +13,7 @@ public class HealthBar : MonoBehaviour
     {
         slider.value = healthComponent.currentHealth;
     }
-
+   
 
     public void SetHealth(int health)
     {
