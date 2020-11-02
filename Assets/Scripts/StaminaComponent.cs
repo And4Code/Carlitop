@@ -6,6 +6,7 @@ public class StaminaComponent : MonoBehaviour
 {
     public float maxStamina = 100f;
     public float currentStamina;
+    public StaminaBar staminaBar;
 
     void Start()
     {
@@ -19,10 +20,12 @@ public class StaminaComponent : MonoBehaviour
         {
 
         }
+        staminaBar.SetStamina(currentStamina);
     }
 
     public void IncreaseStamina(float value)
     {
         currentStamina += value;
+        staminaBar.SetStamina(currentStamina);
     }
 }

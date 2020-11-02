@@ -71,6 +71,13 @@ public class PlayerShoot : MonoBehaviour
                 Destroy(collision.gameObject);
             }
 
+            if (collision.CompareTag("Asteroid"))
+            {
+                collision.tag = "Untagged";
+                health.TakeDamage(20);
+                Destroy(collision.gameObject);
+            }
+
 
         }
 

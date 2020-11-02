@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - StaminaBonus
   - HealthBonus
+  - Asteroid
   layers:
   - Default
   - TransparentFX
