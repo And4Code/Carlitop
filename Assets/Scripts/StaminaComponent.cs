@@ -10,7 +10,7 @@ public class StaminaComponent : MonoBehaviour
 
     void Start()
     {
-        currentStamina = 0f;
+        currentStamina = 80f;
     }
 
     private void Update()
