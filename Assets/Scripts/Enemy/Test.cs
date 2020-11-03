@@ -5,26 +5,26 @@ using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class EnemyRusher : MonoBehaviour
+public class Test : MonoBehaviour
 {
     public EnemyManager enemyManager;
 
-   
+
 
     [SerializeField]
     private Animator m_purpleAnim;
 
     private void Start()
     {
-       
+
         m_purpleAnim.GetComponent<Animator>().Play("PurpleEnemy");
-        
-        
+
+
     }
     public void Update()
     {
         Move();
-        
+
     }
     public void Move()
     {

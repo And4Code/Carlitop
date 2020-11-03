@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8847575363272376286}
   - component: {fileID: 107216413113420190}
   - component: {fileID: -4481448765705824955}
+  - component: {fileID: 6016917077308174631}
   m_Layer: 8
   m_Name: EnemyShooter
   m_TagString: Enemy
@@ -124,6 +125,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   killScore: {fileID: 0}
+  m_MovementAnim: {fileID: 6016917077308174631}
 --- !u!114 &-4481448765705824955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,3 +140,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+--- !u!95 &6016917077308174631
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5471332016451299226}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5585aa750e5555478f03b26a97b50d9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

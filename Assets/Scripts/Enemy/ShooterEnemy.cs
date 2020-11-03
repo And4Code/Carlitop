@@ -13,11 +13,15 @@ public class ShooterEnemy : MonoBehaviour
 
     public Score killScore;
 
+    [SerializeField]
+    private Animator m_MovementAnim;
+
 
 
     private void Awake()
     {
         killScore = FindObjectOfType<Score>();
+        m_MovementAnim.GetComponent<Animator>().Play("BlueAnim");
     }
     public void Update()
     {
