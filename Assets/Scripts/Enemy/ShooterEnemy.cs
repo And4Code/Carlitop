@@ -17,6 +17,8 @@ public class ShooterEnemy : MonoBehaviour
     private Animator m_MovementAnim;
 
 
+    public bool isDead = false;
+
 
     private void Awake()
     {
@@ -54,16 +56,26 @@ public class ShooterEnemy : MonoBehaviour
                             newHealthBonus.transform.position = transform.position;
                             break;
                     }
-                       
+                    
                     Destroy(gameObject);
+
+                    
 
                 }
                 Destroy(collision.gameObject);
+                isDead = true;
+
+                if (isDead)
+                {
+                    m_MovementAnim.Play("DeathEnemy");
+                }
                 //killScore.scoreVal += 100;
             }
 
 
         }
+
+        
     }
     
     public void Move()
