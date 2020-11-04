@@ -11,6 +11,7 @@ public class StaminaComponent : MonoBehaviour
     public CameraBehaviour cameraBehaviour;
     
     
+    
 
     void Start()
     {
@@ -30,7 +31,8 @@ public class StaminaComponent : MonoBehaviour
                     gameManager.Disable();
                     StartCoroutine(UseStamina(8));
                     cameraBehaviour.StartCoroutine(cameraBehaviour.Shake(8, 0.4f));
-                cameraBehaviour.StartCoroutine(cameraBehaviour.AccelerationBackground(8));
+                    cameraBehaviour.StartCoroutine(cameraBehaviour.AccelerationBackground(8));
+                    gameManager.Multiply();
                 }
 
 
