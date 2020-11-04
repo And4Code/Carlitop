@@ -1,30 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.UI;
-
 public class Score : MonoBehaviour
 {
-    public float scoreVal;
+    public float scoreValue = 0f;
+    private static Score scoreInstance = null;
 
-    [SerializeField]
-    private float m_ScorePerSec;
-
-    Text score;
-
-    private void Start()
+    private void Awake()
     {
-        score = GetComponent<Text>();
-        scoreVal = 1f;
-        m_ScorePerSec = 10f;
+        if (this != Instance)
+        {
+         Destroy(this);
+        }
+
+
+        if (this == scoreInstance)
+        {
+            DontDestroyOnLoad(this);
+        }
+
+        //SetScore();
     }
 
-    private void Update()
+    public static Score Instance
     {
-
-        score.text = " : " + (int)scoreVal;
-        scoreVal += m_ScorePerSec * Time.deltaTime;
+        get
+        {
+            if (scoreInstance == null)
+               scoreInstance = FindObjectOfType<Score>();
+            return scoreInstance;
+        }
     }
+
+    //public void SetScore ()
+    //{
+     
+            
+    //}
 }
-   
-

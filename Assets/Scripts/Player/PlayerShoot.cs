@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Animations;
+using UnityEngine;
 
 
 public class PlayerShoot : MonoBehaviour
@@ -12,7 +13,8 @@ public class PlayerShoot : MonoBehaviour
     public LayerMask mask;
 
 
- 
+    [SerializeField]
+    private Animator m_Asteroid;
 
 
    
@@ -35,8 +37,8 @@ public class PlayerShoot : MonoBehaviour
     {
         shootMov = FindObjectOfType<ShootMovement>();
         health = GetComponent<PHealthComponent>();
-
-
+        
+       
     }
     void Update()
     {
@@ -75,6 +77,7 @@ public class PlayerShoot : MonoBehaviour
             {
                 collision.tag = "Untagged";
                 health.TakeDamage(20);
+
                 Destroy(collision.gameObject);
             }
 

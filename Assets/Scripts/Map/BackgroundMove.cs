@@ -11,5 +11,8 @@ public class BackgroundMove : MonoBehaviour
         Vector3 pos = transform.position;
         pos.y += speed * Time.deltaTime;
         transform.position = pos;
+
+
+       
     }
 }

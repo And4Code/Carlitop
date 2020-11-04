@@ -59,7 +59,7 @@ public class ShooterEnemy : MonoBehaviour
 
                 }
                 Destroy(collision.gameObject);
-                killScore.scoreVal += 100;
+                //killScore.scoreVal += 100;
             }
 
 

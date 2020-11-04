@@ -230,7 +230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 254, y: -42.800026}
+  m_AnchoredPosition: {x: 192, y: -42}
   m_SizeDelta: {x: 720.87286, y: 135.1636}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &773372655
@@ -265,7 +265,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: scure
+  m_Text: 'ola
+
+'
 --- !u!222 &773372656
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -283,11 +285,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 773372653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3bc07d32bfbb6448b9080211c8594d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ddea45b3a0ef1b4fb6b74e925351c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endScore: {fileID: 0}
-  m_EndScore: 0
+  scoreText: {fileID: 773372655}
 --- !u!1 &1242035046
 GameObject:
   m_ObjectHideFlags: 0
