@@ -57,18 +57,30 @@ public class ShooterEnemy : MonoBehaviour
                             break;
                     }
                     
-                    Destroy(gameObject);
+                    isDead = true;
+                    if (isDead)
+                    {
+                        m_MovementAnim.Play("DeathEnemy");
+                        
+                        isDead = false;
+                        
+                    }
 
+                    if(isDead = false)
+                    {
+                        
+                     Destroy(gameObject);
+                    }
+                   
                     
 
+                   
                 }
-                Destroy(collision.gameObject);
-                isDead = true;
 
-                if (isDead)
-                {
-                    m_MovementAnim.Play("DeathEnemy");
-                }
+                Destroy(collision.gameObject);
+
+              
+
                 //killScore.scoreVal += 100;
             }
 
