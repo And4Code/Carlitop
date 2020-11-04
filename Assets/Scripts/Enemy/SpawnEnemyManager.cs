@@ -7,44 +7,53 @@ public class SpawnEnemyManager : MonoBehaviour
     public GameObject enemyShooter;
     public GameObject enemyRusher;
     public GameObject asteroid;
+    public bool IsActive = true;
 
     public float spawnRate;
 
-    void Start()
+    public void Start()
     {
-        Invoke("Spawn", spawnRate);
-        InvokeRepeating("IncreaseSpawnRate", 0f, 30f);
+        
+        
+            Invoke("Spawn", spawnRate);
+            InvokeRepeating("IncreaseSpawnRate", 0f, 30f);
+        
+        
     }
 
-    void Spawn()
+    public void Spawn()
     {
-        Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0.05f, 0));
-        Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(0.95f, 1));
-
-
-        int whoSpawn = Random.Range(1, 4);
-        switch (whoSpawn)
+        if (IsActive)
         {
-            case 1:
-                GameObject newEnemyShooter = (GameObject)Instantiate(enemyShooter);
-                newEnemyShooter.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
-                break;
-            case 2:
-                GameObject newEnemyRusher = (GameObject)Instantiate(enemyRusher);
-                newEnemyRusher.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
-                break;
-            case 3:
-                GameObject newAsteroid = (GameObject)Instantiate(asteroid);
-                newAsteroid.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
-                break;
+            Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0.05f, 0));
+            Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(0.95f, 1));
 
-            default:
-                break;
+
+            int whoSpawn = Random.Range(1, 4);
+            switch (whoSpawn)
+            {
+                case 1:
+                    GameObject newEnemyShooter = (GameObject)Instantiate(enemyShooter);
+                    newEnemyShooter.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
+                    break;
+                case 2:
+                    GameObject newEnemyRusher = (GameObject)Instantiate(enemyRusher);
+                    newEnemyRusher.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
+                    break;
+                case 3:
+                    GameObject newAsteroid = (GameObject)Instantiate(asteroid);
+                    newAsteroid.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
+                    break;
+
+                default:
+                    break;
+            }
+
+
+
+            NextEnnemySpawn();
         }
-
-
-
-        NextEnnemySpawn();
+        
     }
 
     void NextEnnemySpawn()
