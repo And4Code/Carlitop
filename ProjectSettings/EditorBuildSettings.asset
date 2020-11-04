@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 9dfa377d5c1dc3541b88ee19ecc951e4
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
-    guid: 8c7553af95bf97d45b957ccc4e622365
+    guid: d9cd287c376ce274db0ff02d1e45b1e6
   - enabled: 1
     path: Assets/Scenes/PauseMenu.unity
     guid: aa82e77e10c3a2844ba0ae4c1a337a33
