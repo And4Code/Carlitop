@@ -1329,6 +1329,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnEnemyManager: {fileID: 1983445410}
+  enemyManagerShooter: {fileID: -1638350815468035775, guid: 94ee0f9f252617d4fa0a70cda913bdbe,
+    type: 3}
+  enemyManagerAsteroid: {fileID: -8326789537111531889, guid: 5c2bf70c749189a4f9da3357d535b622,
+    type: 3}
+  multiplier: 1.3
+  divider: 1.3
 --- !u!4 &1205517872
 Transform:
   m_ObjectHideFlags: 0
