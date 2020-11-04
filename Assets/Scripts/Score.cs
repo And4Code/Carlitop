@@ -7,9 +7,10 @@ public class Score : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log(Instance);
         if (this != Instance)
         {
-         Destroy(this);
+            Destroy(this);
         }
 
 
@@ -18,7 +19,7 @@ public class Score : MonoBehaviour
             DontDestroyOnLoad(this);
         }
 
-        //SetScore();
+
     }
 
     public static Score Instance
@@ -26,14 +27,12 @@ public class Score : MonoBehaviour
         get
         {
             if (scoreInstance == null)
+            {
                scoreInstance = FindObjectOfType<Score>();
+            }
+                
             return scoreInstance;
         }
     }
 
-    //public void SetScore ()
-    //{
-     
-            
-    //}
-}
+}  

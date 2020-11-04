@@ -16,6 +16,8 @@ public class ShooterEnemy : MonoBehaviour
     [SerializeField]
     private Animator m_MovementAnim;
 
+    
+    
 
 
     private void Awake()
@@ -54,16 +56,41 @@ public class ShooterEnemy : MonoBehaviour
                             newHealthBonus.transform.position = transform.position;
                             break;
                     }
-                       
-                    Destroy(gameObject);
+
+                    m_MovementAnim.SetTrigger("Dead");
+                    Destroy(gameObject.GetComponent<ShooterEnemy>());
+                    Destroy(gameObject, 0.5f);
+                    //isDead = true;
+
+                    //if (isDead == true)
+                    //{
+                    //    m_MovementAnim.SetBool("isdead", true);
+                    //}
+
+                    //if (isDead == false)
+                    //{
+                    //    m_MovementAnim.SetBool("isdead", false);
+                    //}
+
+                    //Destroy(gameObject);
+                    //Debug.Log(gameObject);
+
+
+
+
 
                 }
+
                 Destroy(collision.gameObject);
+
+              
+
                 //killScore.scoreVal += 100;
             }
 
 
         }
+       
     }
     
     public void Move()
@@ -84,8 +111,18 @@ public class ShooterEnemy : MonoBehaviour
 
     public void Shoot()
     {
+        
+    
+
         GameObject newBullet = Instantiate(prefabBullet, transform.position, Quaternion.identity);
         newBullet.layer = gameObject.layer;
         newBullet.GetComponent<ShootMovement>().SetDir(Vector2.down);
+
+        
+ 
+      
+
+        
+        
     }
 }
