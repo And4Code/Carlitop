@@ -5,23 +5,27 @@ using UnityEngine.UI;
 
 public class EndScore : MonoBehaviour
 {
-    public Score endScore;
+   //public Score endScore;
 
-   [SerializeField]
-    private float m_EndScore;
 
-    Text finalScore;
+   //[SerializeField]
+   // private float m_EndScore;
 
-    void Start()
-    {
+   // Text finalScore;
+
+    
+   // void Start()
+   // {
+   //     finalScore = GetComponent<Text>();
+   //     endScore = FindObjectOfType<Score>();
+   //     m_EndScore = endScore.scoreVal;
+   //     finalScore.text = "bow" +  (int)m_EndScore;
+   // }
+
+   // // Update is called once per frame
+   // void Update()
+   // {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        m_EndScore = endScore.scoreVal;
-        finalScore.text = "" + (int)m_EndScore;
-    }
+       
+   // }
 }
