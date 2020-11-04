@@ -61,15 +61,17 @@ public class ShooterEnemy : MonoBehaviour
                     if (isDead)
                     {
                         m_MovementAnim.Play("DeathEnemy");
-                        
+
                         isDead = false;
-                        
+
                     }
 
-                    if(isDead = false)
+                    if(isDead == false)
                     {
                         
                      Destroy(gameObject);
+
+                       
                     }
                    
                     
