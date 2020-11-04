@@ -16,8 +16,8 @@ public class ShooterEnemy : MonoBehaviour
     [SerializeField]
     private Animator m_MovementAnim;
 
-
-    public bool isDead = false;
+    
+    
 
 
     private void Awake()
@@ -56,27 +56,29 @@ public class ShooterEnemy : MonoBehaviour
                             newHealthBonus.transform.position = transform.position;
                             break;
                     }
-                    
-                    isDead = true;
-                    if (isDead)
-                    {
-                        m_MovementAnim.Play("DeathEnemy");
 
-                        isDead = false;
+                    m_MovementAnim.SetTrigger("Dead");
+                    Destroy(gameObject.GetComponent<ShooterEnemy>());
+                    Destroy(gameObject, 0.5f);
+                    //isDead = true;
 
-                    }
+                    //if (isDead == true)
+                    //{
+                    //    m_MovementAnim.SetBool("isdead", true);
+                    //}
 
-                    if(isDead == false)
-                    {
-                        
-                     Destroy(gameObject);
+                    //if (isDead == false)
+                    //{
+                    //    m_MovementAnim.SetBool("isdead", false);
+                    //}
 
-                       
-                    }
-                   
-                    
+                    //Destroy(gameObject);
+                    //Debug.Log(gameObject);
 
-                   
+
+
+
+
                 }
 
                 Destroy(collision.gameObject);
@@ -88,8 +90,7 @@ public class ShooterEnemy : MonoBehaviour
 
 
         }
-
-        
+       
     }
     
     public void Move()
@@ -110,8 +111,18 @@ public class ShooterEnemy : MonoBehaviour
 
     public void Shoot()
     {
+        
+    
+
         GameObject newBullet = Instantiate(prefabBullet, transform.position, Quaternion.identity);
         newBullet.layer = gameObject.layer;
         newBullet.GetComponent<ShootMovement>().SetDir(Vector2.down);
+
+        
+ 
+      
+
+        
+        
     }
 }

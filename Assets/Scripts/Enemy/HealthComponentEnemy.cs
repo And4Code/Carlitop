@@ -6,12 +6,13 @@ public class HealthComponentEnemy : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-
+    Animator anim;
    
 
     void Start()
     {
         currentHealth = maxHealth;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class HealthComponentEnemy : MonoBehaviour
 
     public void Die()
     {
-        
-        Destroy(gameObject);
+        anim.SetTrigger("Dead");
+        Destroy(gameObject, 3f);
     }
 }
