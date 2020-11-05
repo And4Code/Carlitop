@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public void Multiply()
     {
         enemyManagerShooter.speed = enemyManagerShooter.speed * multiplier;
-        enemyManagerShooter.fireRate = enemyManagerShooter.speed / divider;
+        enemyManagerShooter.fireRate = enemyManagerShooter.fireRate / divider;
         enemyManagerAsteroid.speed = enemyManagerAsteroid.speed * multiplier;
 
     }
