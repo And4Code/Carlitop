@@ -57,6 +57,7 @@ public class ShooterEnemy : MonoBehaviour
                             break;
                     }
 
+                    Score.Instance.scoreValue += 100;
                     m_MovementAnim.SetTrigger("Dead");
                     Destroy(gameObject.GetComponent<ShooterEnemy>());
                     Destroy(gameObject, 0.5f);
