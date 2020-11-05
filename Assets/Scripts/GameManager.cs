@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public EnemyManager enemyManagerAsteroid;
 
     public float multiplier = 1.3f;
-    public float divider = 1.3f;
+    public float divider = 1.7f;
 
     public void Disable()
     {

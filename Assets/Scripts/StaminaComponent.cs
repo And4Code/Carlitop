@@ -15,13 +15,13 @@ public class StaminaComponent : MonoBehaviour
 
     void Start()
     {
-        currentStamina = 95f;
+        currentStamina = 0f;
         
     }
 
     private void Update()
     {
-        currentStamina += 0.01f * Time.deltaTime;
+        currentStamina += 1f * Time.deltaTime;
 
         
             if (currentStamina >= maxStamina)
@@ -29,9 +29,9 @@ public class StaminaComponent : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.LeftShift))
                 {
                     gameManager.Disable();
-                    StartCoroutine(UseStamina(8));
-                    cameraBehaviour.StartCoroutine(cameraBehaviour.Shake(8, 0.4f));
-                    cameraBehaviour.StartCoroutine(cameraBehaviour.AccelerationBackground(8));
+                    StartCoroutine(UseStamina(10));
+                    cameraBehaviour.StartCoroutine(cameraBehaviour.Shake(10, 0.4f));
+                    cameraBehaviour.StartCoroutine(cameraBehaviour.AccelerationBackground(10));
                     gameManager.Multiply();
                 }
 
@@ -56,7 +56,7 @@ public class StaminaComponent : MonoBehaviour
         float elapsed = 0.0f;
         while(elapsed < duration)
         {
-            currentStamina -= 12.5f * Time.deltaTime;
+            currentStamina -= 10f * Time.deltaTime;
             elapsed += Time.deltaTime;
             yield return null;
         }

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  fireRate: 1
+  fireRate: 4
   power: 0
   staminaBonus: {fileID: 5180168272807738996, guid: acc22be1d25f98b4694bc625fa2fa8d7,
     type: 3}
@@ -95,7 +95,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e1b9b240044ef4aaaddc1d9314f87a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 35.079998, y: 24.802656}

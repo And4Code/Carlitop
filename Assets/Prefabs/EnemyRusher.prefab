@@ -97,8 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 7189359018866015611}
-  m_Player: {fileID: 6497707225539207813, guid: ea596c1a68c64fa49bc88841f06dc367,
-    type: 3}
+  player: {fileID: 0}
   m_purpleAnim: {fileID: 7025004476887394699}
 --- !u!114 &7189359018866015611
 MonoBehaviour:
@@ -112,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c3538b1d97f3b4c859b8d35ef90473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   fireRate: 0
   power: 0
   staminaBonus: {fileID: 0}

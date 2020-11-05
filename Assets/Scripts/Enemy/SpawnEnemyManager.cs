@@ -29,21 +29,22 @@ public class SpawnEnemyManager : MonoBehaviour
             Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(0.95f, 1));
 
 
-            int whoSpawn = Random.Range(1, 4);
+            int whoSpawn = Random.Range(1, 3);
             switch (whoSpawn)
             {
                 case 1:
                     GameObject newEnemyShooter = (GameObject)Instantiate(enemyShooter);
                     newEnemyShooter.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
                     break;
+                
                 case 2:
-                    GameObject newEnemyRusher = (GameObject)Instantiate(enemyRusher);
-                    newEnemyRusher.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
-                    break;
-                case 3:
                     GameObject newAsteroid = (GameObject)Instantiate(asteroid);
                     newAsteroid.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
                     break;
+                /*case 3:
+                    GameObject newEnemyRusher = (GameObject)Instantiate(enemyRusher);
+                    newEnemyRusher.transform.position = new Vector2(Random.Range(min.x, max.x), max.y);
+                    break;*/
 
                 default:
                     break;
