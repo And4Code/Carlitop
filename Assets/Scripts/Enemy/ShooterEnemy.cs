@@ -61,23 +61,7 @@ public class ShooterEnemy : MonoBehaviour
                     m_MovementAnim.SetTrigger("Dead");
                     Destroy(gameObject.GetComponent<ShooterEnemy>());
                     Destroy(gameObject, 0.5f);
-                    //isDead = true;
-
-                    //if (isDead == true)
-                    //{
-                    //    m_MovementAnim.SetBool("isdead", true);
-                    //}
-
-                    //if (isDead == false)
-                    //{
-                    //    m_MovementAnim.SetBool("isdead", false);
-                    //}
-
-                    //Destroy(gameObject);
-                    //Debug.Log(gameObject);
-
-
-
+            
 
 
                 }
@@ -86,7 +70,7 @@ public class ShooterEnemy : MonoBehaviour
 
               
 
-                //killScore.scoreVal += 100;
+               
             }
 
 

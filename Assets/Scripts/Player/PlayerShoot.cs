@@ -109,12 +109,7 @@ public class PlayerShoot : MonoBehaviour
         }
         else if (Input.GetButtonDown("Fire2"))
         {
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    GameObject go = Instantiate(tamere, Position, angle) as GameObject;
-            //    goList.Add(go);
-            //    go.GetComponent<ShootMovement>().SetDir(new Vector3());
-            //}
+            
             GameObject bullet1 = Instantiate(prefabBullet, shooter.position, prefabBullet.transform.rotation);
             
             bullet1.transform.Rotate(0, 0, 180f);
